@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprayIsolering | Marknadsledande Teknik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; overflow-x: hidden; }
+        .blob { position: absolute; width: 500px; height: 500px; background: linear-gradient(180deg, rgba(59, 130, 246, 0.2) 0%, rgba(52, 211, 153, 0.2) 100%); filter: blur(80px); border-radius: 50%; z-index: -1; animation: move 20s infinite alternate; }
+        .blob-2 { right: -100px; top: 20%; background: rgba(96, 165, 250, 0.15); animation-duration: 25s; animation-delay: -5s; }
+        @keyframes move { from { transform: translate(-10%, -10%) scale(1); } to { transform: translate(20%, 20%) scale(1.2); } }
+        .liquid-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(25px) saturate(180%); -webkit-backdrop-filter: blur(25px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 40px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); transition: all 0.5s ease; }
+        .liquid-glass:hover { border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.05); }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%; background: #fff; box-shadow: 0 0 15px rgba(59, 130, 246, 0.8); cursor: pointer; margin-top: -10px; }
+    </style>
+</head>
+<body class="text-slate-300">
+    <div class="blob"></div><div class="blob blob-2"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 py-6 px-6">
+        <div class="max-w-7xl mx-auto liquid-glass py-4 px-8 flex justify-between items-center">
+            <div class="text-xl font-black tracking-tighter text-white uppercase italic">Spray<span class="text-blue-500">isolering</span></div>
+            <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#hem" class="hover:text-white transition-colors">Hem</a>
+                <a href="#process" class="hover:text-white transition-colors">Process</a>
+                <a href="#kalkyl" class="hover:text-white transition-colors">Kalkylator</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </div>
+            <a href="mailto:info@sprayisolering.se?subject=Offertförfrågan" class="bg-white text-black px-6 py-2 rounded-full text-[10px] font-bold tracking-widest hover:scale-105 transition-all">FRI OFFERT</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hem" class="pt-56 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-block px-4 py-1 liquid-glass text-[10px] font-bold tracking-[0.3em] text-blue-400 mb-8 uppercase">Marknadsledande inom PUR-isolering</div>
+            <h1 class="text-6xl md:text-9xl font-black text-white tracking-tighter mb-8 leading-[0.85]">SÄNK DINA <br><span class="gradient-text">ENERGIKOSTNADER</span></h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-light leading-relaxed">Sömlös polyurethanisolering som expanderar in i varje skrymsle. Inga skarvar, inget drag – bara maximal effektivitet och fuktskydd.</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="mailto:info@sprayisolering.se?subject=Boka Besiktning" class="bg-blue-600 text-white px-12 py-5 rounded-full font-black text-xs tracking-widest hover:bg-blue-500 transition-all uppercase text-center">Boka Kostnadsfri Besiktning</a>
+                <a href="#faq" class="liquid-glass text-white px-12 py-5 rounded-full font-black text-xs tracking-widest hover:bg-white/5 transition-all uppercase text-center">Hur det fungerar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process Section -->
+    <section id="process" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-black text-white mb-16 text-center tracking-tighter uppercase">Processen: Från Besiktning till Besparing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="liquid-glass p-8 relative">
+                    <div class="text-5xl font-black text-blue-500/20 mb-4">01</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Analys</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Vi besiktigar ytan och säkerställer att underlaget är optimalt för vidhäftning.</p>
+                </div>
+                <div class="liquid-glass p-8 relative">
+                    <div class="text-5xl font-black text-blue-500/20 mb-4">02</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Applicering</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Komponenterna blandas under tryck och sprutas direkt på ytan för en sömlös barriär.</p>
+                </div>
+                <div class="liquid-glass p-8 relative">
+                    <div class="text-5xl font-black text-blue-500/20 mb-4">03</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Expansion</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Materialet expanderar omedelbart och tätar varenda mikrospricka och hålrum.</p>
+                </div>
+                <div class="liquid-glass p-8 relative">
+                    <div class="text-5xl font-black text-blue-500/20 mb-4">04</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Klart</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Härdningen sker på sekunder. Din fastighet är nu skyddad för 50+ år framåt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section id="kalkyl" class="py-24 px-6 bg-[#080808]">
+        <div class="max-w-4xl mx-auto liquid-glass p-12 md:p-20 relative overflow-hidden">
+            <h2 class="text-4xl font-black text-white mb-2 text-center tracking-tighter uppercase">Besparingskalkyl</h2>
+            <p class="text-slate-500 text-center mb-16 uppercase tracking-[0.4em] text-[9px] font-bold">Baserat på Lambda 0,025 • v2.1</p>
+            <div class="space-y-14">
+                <div>
+                    <div class="flex justify-between items-center mb-6"><label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Arbetsyta (KVM)</label><div class="text-white font-black text-2xl font-mono" id="area-val">150</div></div>
+                    <input type="range" id="area" min="50" max="1000" value="150" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-white" oninput="calculate()">
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-6"><label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Nuvarande Uppvärmning (KR/ÅR)</label><div class="text-white font-black text-2xl font-mono" id="cost-val">30 000</div></div>
+                    <input type="range" id="cost" min="10000" max="150000" step="2500" value="30000" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-white" oninput="calculate()">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 border-t border-white/5">
+                    <div class="p-8 rounded-[32px] bg-blue-500/5 border border-blue-500/10"><div class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-3">Din Årliga Besparing</div><div class="text-5xl font-black text-white tracking-tighter"><span id="saving-val">15 000</span><span class="text-sm text-blue-500 ml-2">kr</span></div></div>
+                    <div class="p-8 rounded-[32px] bg-emerald-500/5 border border-emerald-500/10"><div class="text-[9px] font-black text-emerald-400 uppercase tracking-[0.2em] mb-3">Payback-tid (ROI)</div><div class="text-5xl font-black text-white tracking-tighter"><span id="roi-val">4.5</span><span class="text-sm text-emerald-500 ml-2">år</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <h2 class="text-4xl font-black text-white mb-12 text-center tracking-tighter uppercase">Vanliga Frågor</h2>
+            <div class="liquid-glass p-8">
+                <h4 class="text-white font-bold mb-2">Hur länge håller det?</h4>
+                <p class="text-sm text-slate-500">Sprayisolering behåller sina egenskaper under hela byggnadens livslängd, testad för 50+ år.</p>
+            </div>
+            <div class="liquid-glass p-8">
+                <h4 class="text-white font-bold mb-2">Är det brandfarligt?</h4>
+                <p class="text-sm text-slate-500">Vi använder brandklassade material som uppfyller svenska byggregler (Boverket) och avger inga aktiva flammor.</p>
+            </div>
+            <div class="liquid-glass p-8">
+                <h4 class="text-white font-bold mb-2">Lukt och torktid?</h4>
+                <p class="text-sm text-slate-500">Materialet härdar på sekunder. Eventuell lukt vädras ut snabbt under installationen.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 border-t border-white/5 text-center">
+        <div class="text-[9px] font-black uppercase tracking-[0.5em] text-slate-700 mb-4">© 2026 SPRAYISOLERING.SE // BREISNER CONSULTING ARCHITECTURE</div>
+        <div class="text-[8px] text-slate-800 uppercase font-bold italic">Specialister på sömlös energieffektivisering</div>
+    </footer>
+
+    <script>
+        function calculate() {
+            const area = parseInt(document.getElementById('area').value);
+            const cost = parseInt(document.getElementById('cost').value);
+            document.getElementById('area-val').innerText = area;
+            document.getElementById('cost-val').innerText = cost.toLocaleString();
+            const saving = cost * 0.5;
+            document.getElementById('saving-val').innerText = Math.round(saving).toLocaleString();
+            const installCost = area * 450;
+            const roi = installCost / saving;
+            document.getElementById('roi-val').innerText = roi.toFixed(1);
+        }
+        calculate();
+    </script>
+</body>
+</html>
