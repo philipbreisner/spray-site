@@ -22,6 +22,15 @@
         .mobile-menu.active { display: block; }
         .hero-bg { background-image: linear-gradient(to bottom, rgba(5,5,5,0.8), rgba(5,5,5,0.9)), url('assets/hero-option-1.jpg'); background-size: cover; background-position: center; }
         a, button { touch-action: manipulation; }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); color: #60a5fa; }
+            100% { transform: scale(1); }
+        }
+        .pop-animation { animation: pop 0.3s ease-out; }
+        .blurred { filter: blur(12px); transition: filter 0.5s ease; pointer-events: none; }
+        .gate-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 10; background: rgba(5,5,5,0.4); backdrop-filter: blur(4px); border-radius: 32px; transition: all 0.5s ease; }
+        .gate-overlay.hidden { opacity: 0; pointer-events: none; }
     </style>
 </head>
 <body class="text-slate-300">
@@ -40,7 +49,7 @@
                 <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="mailto:info@sprayisolering.se?subject=Offertförfrågan" class="hidden sm:block bg-white text-black px-6 py-2 rounded-full text-[12px] font-bold tracking-widest hover:scale-105 transition-all">FRI OFFERT</a>
+                <a href="mailto:info@sprayisolering.se?subject=Offertförfrågan" class="hidden sm:block bg-white text-black px-6 py-2 rounded-full text-[12px] font-bold tracking-widest hover:scale-105 transition-all">SE MIN OFFERT</a>
                 <button onclick="toggleMenu()" class="md:hidden text-white p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
                 </button>
@@ -53,7 +62,7 @@
                 <a href="#tak" onclick="toggleMenu()">Takbeläggning</a>
                 <a href="#kalkyl" onclick="toggleMenu()">Kalkylator</a>
                 <a href="#faq" onclick="toggleMenu()">FAQ</a>
-                <a href="mailto:info@sprayisolering.se?subject=Offertförfrågan" class="bg-white text-black py-4 rounded-xl text-center">FRI OFFERT</a>
+                <a href="mailto:info@sprayisolering.se?subject=Offertförfrågan" class="bg-white text-black py-4 rounded-xl text-center">SE MIN OFFERT</a>
             </div>
         </div>
     </nav>
@@ -62,7 +71,7 @@
     <section id="hem" class="pt-36 md:pt-56 pb-20 px-6 hero-bg min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto text-center">
             <div class="inline-block px-4 py-1 liquid-glass text-[10px] font-bold tracking-[0.3em] text-blue-400 mb-6 md:mb-8 uppercase">Högpresterande Skumisolering</div>
-            <h1 class="text-5xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter mb-8 leading-[0.9]">SÄNK DINA <br><span class="gradient-text">ENERGIKOSTNADER</span></h1>
+            <h1 class="text-[2.6rem] xs:text-5xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter mb-8 leading-[0.9]">SÄNK DINA <br><span class="gradient-text">ENERGIKOSTNADER</span></h1>
             <p class="max-w-2xl mx-auto text-lg md:text-2xl text-slate-400 mb-12 font-light leading-relaxed">Sömlös polyurethanisolering (PUR) som expanderar in i varje skrymsle. Maximal effektivitet, fuktskydd och hållbarhet.</p>
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
                 <a href="mailto:info@sprayisolering.se?subject=Boka Besiktning" class="bg-blue-600 text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-[12px] md:text-sm tracking-widest hover:bg-blue-500 transition-all uppercase text-center">Boka Fri Besiktning</a>
@@ -124,9 +133,16 @@
                     <div class="flex justify-between items-center mb-4"><label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Uppvärmning (KR/ÅR)</label><div class="text-white font-black text-xl md:text-2xl font-mono" id="cost-val">30 000</div></div>
                     <input type="range" id="cost" min="10000" max="150000" step="2500" value="30000" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-white" oninput="calculate()">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pt-10 md:pt-12 border-t border-white/5">
-                    <div class="p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-blue-500/5 border border-blue-500/10"><div class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2">Årlig Besparing</div><div class="text-3xl md:text-5xl font-black text-white tracking-tighter"><span id="saving-val">15 000</span><span class="text-sm text-blue-500 ml-2">kr</span></div></div>
-                    <div class="p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-emerald-500/5 border border-emerald-500/10"><div class="text-[9px] font-black text-emerald-400 uppercase tracking-[0.2em] mb-2">Payback-tid</div><div class="text-3xl md:text-5xl font-black text-white tracking-tighter"><span id="roi-val">4.5</span><span class="text-sm text-emerald-500 ml-2">år</span></div></div>
+                <div class="relative pt-10 md:pt-12 border-t border-white/5">
+                    <!-- Gating Overlay -->
+                    <div id="gate" class="gate-overlay">
+                        <button onclick="unlockResults()" class="bg-blue-600 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-blue-500 transition-all uppercase shadow-[0_0_30px_rgba(59,130,246,0.4)]">VISA MIN BERÄKNING</button>
+                    </div>
+                    
+                    <div id="results-area" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 blurred">
+                        <div class="p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-blue-500/5 border border-blue-500/10"><div class="text-[9px] font-black text-blue-400 uppercase tracking-[0.2em] mb-2">Årlig Besparing</div><div class="text-3xl md:text-5xl font-black text-white tracking-tighter"><span id="saving-val">15 000</span><span class="text-sm text-blue-500 ml-2">kr</span></div></div>
+                        <div class="p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-emerald-500/5 border border-emerald-500/10"><div class="text-[9px] font-black text-emerald-400 uppercase tracking-[0.2em] mb-2">Payback-tid</div><div class="text-3xl md:text-5xl font-black text-white tracking-tighter"><span id="roi-val">4.5</span><span class="text-sm text-emerald-500 ml-2">år</span></div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,18 +198,37 @@
         <div class="text-[8px] md:text-[9px] font-black uppercase tracking-[0.5em] text-slate-700 mb-4">© 2026 SPRAYISOLERING.SE // BREISNER CONSULTING</div>
     </footer>
 
+    <!-- Sticky Mobile Footer -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 z-[60] bg-black/80 backdrop-blur-lg border-t border-white/10">
+        <a href="mailto:info@sprayisolering.se?subject=Offertförfrågan" class="block w-full bg-white text-black py-4 rounded-xl text-center font-black text-sm tracking-widest uppercase shadow-[0_0_30px_rgba(255,255,255,0.2)]">SE MIN OFFERT</a>
+    </div>
+
     <script>
         function toggleMenu() { document.getElementById('menu').classList.toggle('active'); }
+        function unlockResults() {
+            document.getElementById('gate').classList.add('hidden');
+            document.getElementById('results-area').classList.remove('blurred');
+        }
         function calculate() {
             const area = parseInt(document.getElementById('area').value);
             const cost = parseInt(document.getElementById('cost').value);
             document.getElementById('area-val').innerText = area;
             document.getElementById('cost-val').innerText = cost.toLocaleString();
             const saving = cost * 0.5;
-            document.getElementById('saving-val').innerText = Math.round(saving).toLocaleString();
+            const savingEl = document.getElementById('saving-val');
+            const roiEl = document.getElementById('roi-val');
+            
+            savingEl.innerText = Math.round(saving).toLocaleString();
             const installCost = area * 450;
             const roi = installCost / saving;
-            document.getElementById('roi-val').innerText = roi.toFixed(1);
+            roiEl.innerText = roi.toFixed(1);
+
+            // Trigger animation
+            [savingEl, roiEl].forEach(el => {
+                el.classList.remove('pop-animation');
+                void el.offsetWidth; // trigger reflow
+                el.classList.add('pop-animation');
+            });
         }
         calculate();
     </script>
