@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprayisolering Sk&aring;ne | PUR-isolering &amp; Polyurea | SprayIsolering.se</title>
     <meta name="description" content="Professionell sprayisolering i Sk&aring;ne. PUR-isolering av krypgrunder, vindar, v&auml;ggar och tak. Erfarenhet sedan 2011, utbildad i USA. Beg&auml;r kostnadsfri offert.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="SprayIsolering">
+    <meta name="publisher" content="Breisner Consulting">
     <link rel="canonical" href="https://sprayisolering.se/">
 
     <!-- Open Graph -->
@@ -56,29 +58,42 @@
         .gate-overlay.hidden { opacity: 0; pointer-events: none; }
     </style>
 
-    <!-- Structured Data: LocalBusiness -->
+    <!-- Structured Data: HomeAndConstructionBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://sprayisolering.se/#organization",
         "name": "SprayIsolering",
         "alternateName": "SprayIsolering.se",
-        "description": "Professionell sprayisolering med PUR och Polyurea i Sk\u00e5ne. Isolering av krypgrunder, vindar, v\u00e4ggar och tak. Erfarenhet sedan 2011.",
+        "description": "Professionell sprayisolering med PUR (polyuretan) och Polyurea i Sk\u00e5ne, Sverige. Isolering av krypgrunder, vindar, v\u00e4ggar och tak. Erfarenhet sedan 2011, utbildad i USA, sakkunnig i Norden. Typisk energibesparing: 30\u201350% l\u00e4gre uppv\u00e4rmningskostnad.",
         "url": "https://sprayisolering.se",
         "telephone": "+46708136007",
         "email": "info@sprayisolering.se",
         "image": "https://sprayisolering.se/assets/hero-option-1.jpg",
         "logo": "https://sprayisolering.se/assets/logo.svg",
         "foundingDate": "2011",
-        "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": 55.376,
-                "longitude": 13.157
-            },
-            "geoRadius": "150000"
+        "priceRange": "$$",
+        "parentOrganization": {
+            "@type": "Organization",
+            "name": "Breisner Consulting",
+            "url": "https://breisnerconsulting.se"
         },
+        "areaServed": [
+            {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 55.376,
+                    "longitude": 13.157
+                },
+                "geoRadius": "150000"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "Sk\u00e5ne"
+            }
+        ],
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Trelleborg",
@@ -94,13 +109,17 @@
             "https://www.instagram.com/sprayisolering/"
         ],
         "knowsAbout": [
-            "Sprayisolering",
-            "PUR-isolering",
-            "Polyurea",
-            "Krypgrundsisolering",
-            "Vindsisolering",
-            "V\u00e4ggisolering",
-            "Energieffektivisering"
+            "Spray foam insulation",
+            "PUR insulation (polyurethane)",
+            "Polyurea coatings",
+            "Crawl space insulation",
+            "Attic insulation",
+            "Wall insulation",
+            "Industrial building insulation",
+            "Energy efficiency",
+            "Thermal bridge elimination",
+            "Closed-cell spray foam",
+            "Open-cell spray foam"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -111,7 +130,8 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Sprayisolering av krypgrunder",
-                        "description": "Eliminerar drag, fukt och kallras i krypgrunder med PUR-skum"
+                        "description": "Eliminerar drag, fukt och kallras i krypgrunder med PUR-skum. S\u00f6ml\u00f6s applicering som t\u00e4tar alla h\u00e5lrum.",
+                        "serviceType": "Crawl Space Insulation"
                     }
                 },
                 {
@@ -119,7 +139,8 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Vindsisolering",
-                        "description": "Minimerar v\u00e4rmef\u00f6rluster via vindar och tak med skarvfri sprayisolering"
+                        "description": "Minimerar v\u00e4rmef\u00f6rluster via vindar och tak med skarvfri sprayisolering. Idealisk f\u00f6r oj\u00e4mna konstruktioner.",
+                        "serviceType": "Attic Insulation"
                     }
                 },
                 {
@@ -127,7 +148,8 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "V\u00e4ggisolering",
-                        "description": "Sprayisolering av v\u00e4ggar f\u00f6r t\u00e4thet, fuktskydd och j\u00e4mn temperatur"
+                        "description": "Sprayisolering av v\u00e4ggar f\u00f6r t\u00e4thet, fuktskydd och j\u00e4mn temperatur. H\u00f6gre isolerv\u00e4rde per cm \u00e4n traditionell isolering.",
+                        "serviceType": "Wall Insulation"
                     }
                 },
                 {
@@ -135,10 +157,32 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Hallisolering",
-                        "description": "Industriell sprayisolering av lagerhallar och fastigheter"
+                        "description": "Industriell sprayisolering av lagerhallar och fastigheter. S\u00e4nker driftskostnader och f\u00f6rb\u00e4ttrar arbetsmilj\u00f6.",
+                        "serviceType": "Industrial Building Insulation"
                     }
                 }
             ]
+        }
+    }
+    </script>
+
+    <!-- Structured Data: WebPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://sprayisolering.se/#webpage",
+        "url": "https://sprayisolering.se",
+        "name": "Sprayisolering Sk\u00e5ne \u2014 PUR-isolering & Polyurea | SprayIsolering.se",
+        "description": "Professionell sprayisolering i Sk\u00e5ne. PUR-isolering av krypgrunder, vindar, v\u00e4ggar och tak. Erfarenhet sedan 2011, utbildad i USA.",
+        "isPartOf": { "@id": "https://sprayisolering.se/#organization" },
+        "about": { "@id": "https://sprayisolering.se/#organization" },
+        "inLanguage": "sv-SE",
+        "datePublished": "2026-02-18",
+        "dateModified": "2026-02-18",
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "h2", "#faq p"]
         }
     }
     </script>
@@ -154,7 +198,7 @@
                 "name": "Hur fungerar sprayisolering?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Isoleringen appliceras som en v\u00e4tska som expanderar direkt mot underlaget. Det skapar en helt skarvfri och t\u00e4t yta som eliminerar k\u00f6ldbryggor."
+                    "text": "Sprayisolering (PUR-skum) appliceras som en v\u00e4tska som expanderar 30\u201360 g\u00e5nger sin volym direkt mot underlaget. Det skapar en helt skarvfri och luft\u00e4t yta som eliminerar k\u00f6ldbryggor. Tekniken har anv\u00e4nts internationellt sedan 1950-talet och \u00e4r den mest effektiva isoleringsmetoden per centimeter tjocklek."
                 }
             },
             {
@@ -162,7 +206,15 @@
                 "name": "Vad skiljer sprayisolering fr\u00e5n traditionell isolering?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Till skillnad fr\u00e5n skivor som kan glipa fyller sprayisolering alla h\u00e5lrum och f\u00e4ster mot konstruktionen. B\u00e4ttre t\u00e4thet, h\u00f6gre isolerv\u00e4rde per cm och l\u00e5ngsiktig formstabilitet."
+                    "text": "Sprayisolering har 30\u201350% h\u00f6gre isolerv\u00e4rde per cm j\u00e4mf\u00f6rt med mineralull. Till skillnad fr\u00e5n skivor som kan glipa fyller PUR-skum alla h\u00e5lrum och f\u00e4ster direkt mot konstruktionen. Det ger b\u00e4ttre t\u00e4thet, fuktskydd och l\u00e5ngsiktig formstabilitet \u2014 utan skarvar d\u00e4r v\u00e4rme kan l\u00e4cka."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hur mycket kan jag spara p\u00e5 uppv\u00e4rmning med sprayisolering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sprayisolering minskar typiskt uppv\u00e4rmningskostnaden med 30\u201350%, beroende p\u00e5 byggnadens befintliga isolering och konstruktion. F\u00f6r en villa med 30 000 kr i \u00e5rlig uppv\u00e4rmningskostnad inneb\u00e4r det en besparing p\u00e5 cirka 10 000\u201315 000 kr per \u00e5r. Payback-tiden ligger normalt p\u00e5 3\u20137 \u00e5r."
                 }
             },
             {
@@ -170,7 +222,7 @@
                 "name": "Passar sprayisolering f\u00f6r alla konstruktioner?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Vi utf\u00f6r alltid en teknisk bed\u00f6mning innan start. Metoden \u00e4r idealisk f\u00f6r krypgrunder, vindar och renoveringar d\u00e4r utrymmet \u00e4r begr\u00e4nsat eller konstruktionen oj\u00e4mn."
+                    "text": "Vi utf\u00f6r alltid en teknisk bed\u00f6mning innan start. Metoden \u00e4r idealisk f\u00f6r krypgrunder, vindar och renoveringar d\u00e4r utrymmet \u00e4r begr\u00e4nsat eller konstruktionen oj\u00e4mn. B\u00e5de slutna celler (h\u00f6g densitet, fuktsp\u00e4rr) och \u00f6ppna celler (l\u00e4gre densitet, ljudd\u00e4mpning) finns tillg\u00e4ngliga beroende p\u00e5 behov."
                 }
             },
             {
@@ -178,7 +230,23 @@
                 "name": "Hur l\u00e5ng tid tar ett sprayisoleringsprojekt?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "En normal villagrund eller vind isoleras oftast p\u00e5 en dag. Materialet h\u00e4rdar p\u00e5 sekunder s\u00e5 ytan kan bearbetas eller byggas in n\u00e4stan omedelbart."
+                    "text": "En normal villagrund eller vind isoleras oftast p\u00e5 en dag. Materialet h\u00e4rdar p\u00e5 sekunder s\u00e5 ytan kan bearbetas eller byggas in n\u00e4stan omedelbart. St\u00f6rre projekt som industrihallar tar typiskt 2\u20135 dagar beroende p\u00e5 yta."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Vad kostar sprayisolering per kvadratmeter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Priset varierar beroende p\u00e5 yta, tjocklek och konstruktionstyp. Vi ger alltid en kostnadsfri offert efter teknisk bed\u00f6mning. Anv\u00e4nd v\u00e5r kalkylator p\u00e5 sajten f\u00f6r en uppskattning av besparing och payback-tid."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jobbar ni i hela Sverige?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vi \u00e4r baserade i Trelleborg, Sk\u00e5ne och utf\u00f6r de flesta uppdrag i s\u00f6dra Sverige. F\u00f6r st\u00f6rre projekt \u00e4r vi tillg\u00e4ngliga i hela Sverige och Norden."
                 }
             }
         ]
@@ -379,19 +447,31 @@
             <div class="space-y-4">
                 <div class="liquid-glass p-6 md:p-8">
                     <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Hur fungerar sprayisolering?</h4>
-                    <p class="text-[14px] text-slate-500 leading-relaxed">Isoleringen appliceras som en v&auml;tska som expanderar direkt mot underlaget. Det skapar en helt skarvfri och t&auml;t yta som eliminerar k&ouml;ldbryggor.</p>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">PUR-skum appliceras som en v&auml;tska som expanderar 30&ndash;60 g&aring;nger sin volym direkt mot underlaget. Det skapar en helt skarvfri och luft&auml;t yta som eliminerar k&ouml;ldbryggor. Tekniken har anv&auml;nts internationellt sedan 1950-talet.</p>
                 </div>
                 <div class="liquid-glass p-6 md:p-8">
                     <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Vad skiljer det fr&aring;n traditionell isolering?</h4>
-                    <p class="text-[14px] text-slate-500 leading-relaxed">Till skillnad fr&aring;n skivor som kan glipa fyller sprayisolering alla h&aring;lrum och f&auml;ster mot konstruktionen. B&auml;ttre t&auml;thet, h&ouml;gre isolerv&auml;rde per cm och l&aring;ngsiktig formstabilitet.</p>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">Sprayisolering har 30&ndash;50% h&ouml;gre isolerv&auml;rde per cm j&auml;mf&ouml;rt med mineralull. Till skillnad fr&aring;n skivor som kan glipa fyller PUR-skum alla h&aring;lrum och f&auml;ster direkt mot konstruktionen &mdash; utan skarvar d&auml;r v&auml;rme kan l&auml;cka.</p>
+                </div>
+                <div class="liquid-glass p-6 md:p-8">
+                    <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Hur mycket kan jag spara p&aring; uppv&auml;rmning?</h4>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">Typiskt 30&ndash;50% l&auml;gre uppv&auml;rmningskostnad. F&ouml;r en villa med 30 000 kr/&aring;r i uppv&auml;rmning inneb&auml;r det ca 10 000&ndash;15 000 kr i &aring;rlig besparing. Payback-tid: 3&ndash;7 &aring;r.</p>
                 </div>
                 <div class="liquid-glass p-6 md:p-8">
                     <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Passar det f&ouml;r alla konstruktioner?</h4>
-                    <p class="text-[14px] text-slate-500 leading-relaxed">Vi utf&ouml;r alltid en teknisk bed&ouml;mning innan start. Metoden &auml;r idealisk f&ouml;r krypgrunder, vindar och renoveringar d&auml;r utrymmet &auml;r begr&auml;nsat eller konstruktionen oj&auml;mn.</p>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">Vi utf&ouml;r alltid en teknisk bed&ouml;mning innan start. B&aring;de slutna celler (h&ouml;g densitet, fuktsp&auml;rr) och &ouml;ppna celler (l&auml;gre densitet, ljudd&auml;mpning) finns tillg&auml;ngliga beroende p&aring; behov.</p>
                 </div>
                 <div class="liquid-glass p-6 md:p-8">
                     <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Hur l&aring;ng tid tar ett projekt?</h4>
-                    <p class="text-[14px] text-slate-500 leading-relaxed">En normal villagrund eller vind isoleras oftast p&aring; en dag. Materialet h&auml;rdar p&aring; sekunder s&aring; ytan kan bearbetas eller byggas in n&auml;stan omedelbart.</p>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">En normal villagrund eller vind isoleras p&aring; en dag. Materialet h&auml;rdar p&aring; sekunder. St&ouml;rre projekt som industrihallar tar typiskt 2&ndash;5 dagar beroende p&aring; yta.</p>
+                </div>
+                <div class="liquid-glass p-6 md:p-8">
+                    <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Vad kostar sprayisolering?</h4>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">Priset varierar beroende p&aring; yta, tjocklek och konstruktionstyp. Anv&auml;nd v&aring;r kalkylator ovan f&ouml;r en uppskattning, eller beg&auml;r en kostnadsfri offert efter teknisk bed&ouml;mning.</p>
+                </div>
+                <div class="liquid-glass p-6 md:p-8">
+                    <h4 class="text-white text-[15px] md:text-[16px] font-semibold mb-2">Jobbar ni i hela Sverige?</h4>
+                    <p class="text-[14px] text-slate-500 leading-relaxed">Vi &auml;r baserade i Trelleborg, Sk&aring;ne och utf&ouml;r de flesta uppdrag i s&ouml;dra Sverige. F&ouml;r st&ouml;rre projekt &auml;r vi tillg&auml;ngliga i hela Sverige och Norden.</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,34 @@
 User-agent: *
 Allow: /
-Disallow:
-
 Sitemap: https://sprayisolering.se/sitemap.xml
+
+# AI Search Engine Crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# LLM-friendly site summary
+# See: https://sprayisolering.se/llms.txt
